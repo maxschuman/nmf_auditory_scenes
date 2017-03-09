@@ -1,9 +1,8 @@
 import numpy as np, librosa
+from globals import *
 
 # default values for our project
 # Also it looks like the sample rate for the sound effects is 22050
-HOP_LENGTH = 1024
-WINDOW_LENGTH = 2048
 
 def nmf_train(path, num_components):
 	"""
@@ -12,9 +11,9 @@ def nmf_train(path, num_components):
 	audio, sr = librosa.load(path)
 	s = librosa.stft(audio, WINDOW_LENGTH, HOP_LENGTH)
 	s = np.abs(s)
-	W, H = librosa.decompose.decompose(s, num_components)
+	components, activations = librosa.decompose.decompose(s, num_components)
 
-	return W, H
+	return components, activations
 
 def nmf_recompose(W, H, sr, path=False):
 	"""
