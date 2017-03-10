@@ -12,8 +12,9 @@ def nmf_train(path, num_components):
 	s = librosa.stft(audio, WINDOW_LENGTH, HOP_LENGTH)
 	s = np.abs(s)
 	components, activations = librosa.decompose.decompose(s, num_components)
-
 	return components, activations
+
+# nmf_train("dev_dataset/dcase2016_task2_dev/sound/dev_1_ebr_-6_nec_1_poly_0.wav", 8)
 
 def nmf_recompose(W, H, sr, path=False):
 	"""
