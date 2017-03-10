@@ -1,17 +1,28 @@
 import numpy as np, librosa
+from sklearn.decomposition import NMF
 from globals import *
 
 # default values for our project
 # Also it looks like the sample rate for the sound effects is 22050
 
-def nmf_train(path, num_components):
+def nmf_train(path, num_components, component_start=None):
 	"""
 	Function to generate nmf components on one sound file.
+	If given, component_start is the initial value of the component matrix in the decomposition.
 	"""
 	audio, sr = librosa.load(path)
 	s = librosa.stft(audio, WINDOW_LENGTH, HOP_LENGTH)
 	s = np.abs(s)
-	components, activations = librosa.decompose.decompose(s, num_components)
+
+	if component_start is not None:
+		model = NMF(n_components=num_components, init="custom")
+		activation_start = np.random.rand(num_components, s.shape[1])
+		components = model.fit_transform(s, W=component_start, H=activation_start)
+		activations = model.components_
+		return components, activations
+	
+	else:
+		components, activations = librosa.decompose.decompose(s, num_components)
 
 	return components, activations
 
@@ -39,3 +50,4 @@ def reconstruct_from_mag(S, window_length, hop_length, num_its=8):
 		sig = librosa.istft(S * np.exp(1j * np.angle(librosa.stft(sig, window_length, hop_length))), hop_length, window_length)
 
 	return sig
+
