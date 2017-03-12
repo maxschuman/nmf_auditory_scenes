@@ -30,5 +30,5 @@ def display_events(path, list_of_effects = LIST_OF_EFFECTS, moving_interval=10, 
 
 
 # test
-display_events('test_sounds/test_trained.wav', threshold=0.5)
+display_events('test_sounds/test_not_trained.wav', threshold=0.5)
 # display_events('test_sounds/test_trained_small.wav', list_of_effects=['Clear Throat', 'Cough', 'Door Slam'])
