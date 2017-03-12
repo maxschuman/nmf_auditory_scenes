@@ -17,15 +17,14 @@ def nmf_separate(path):
 	except:
 		with open('trained_matrix_concatenated_sounds.pkl', 'rb') as infile:
 			trained_components = pickle.load(infile)
-		colormap(trained_components)
+		# colormap(trained_components)
 
 		audio, sr = librosa.load(path)
 		s = librosa.stft(audio, WINDOW_LENGTH, HOP_LENGTH)
 		s = np.abs(s)
-		W, H, n_iter = sklearn.decomposition.non_negative_factorization(s.T, W=np.zeros((s.shape[1], COMPONENTS_PER_EFFECT * 12)), H=trained_components.T, n_components=COMPONENTS_PER_EFFECT * 12, init='custom', update_H=False)
-		print("{0} iterations".format(n_iter))
-		colormap(H.T)
-		colormap(W.T)
+		W, H, n_iter = sklearn.decomposition.non_negative_factorization(s.T, W=np.zeros((s.shape[1], trained_components.shape[0])), H=trained_components.T, n_components=trained_components.shape[1], init='custom', update_H=False)
+		# colormap(H.T)
+		# colormap(W.T)
 		
 		with open('test_matrix.pkl', 'wb') as outfile:
 			pickle.dump((H.T, W.T), outfile)

@@ -52,7 +52,9 @@ trained_matrix = np.random.rand(
 # Training on sounds in training_sounds
 root = "training_sounds"
 librosa.load('dev_dataset/dcase2016_task2_train/clearthroat/clearthroat002.wav')
-list = os.listdir(root)
+list = os.listdir(root)[0:3]
+trained_matrix = np.random.rand(
+    int(WINDOW_LENGTH / 2 + 1), COMPONENTS_PER_EFFECT * (len(list) + 1))
 for i in range(len(list)):
 	x = list[i]
 	path = os.path.join(root, x)
@@ -62,6 +64,6 @@ for i in range(len(list)):
 	trained_matrix[:, i * COMPONENTS_PER_EFFECT:(i + 1) * COMPONENTS_PER_EFFECT] = components
 
 colormap(trained_matrix)
-f = open("trained_matrix_concatenated_sounds.pkl", "wb")
+f = open("trained_matrix_concatenated_sounds_small.pkl", "wb")
 pickle.dump(trained_matrix, f)
 f.close()

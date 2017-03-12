@@ -4,23 +4,27 @@ import numpy as np
 from globals import *
 
 
-def display_events(path):
+def display_events(path, list_of_effects = LIST_OF_EFFECTS, moving_interval=10):
 	W, H = nmf_separate(path)
-	num_effects = len(LIST_OF_EFFECTS)
-	consolidated_H = np.empty(shape=(num_effects, H.shape[1]))
+	num_effects = len(list_of_effects)
+	consolidated_H = np.empty(shape=(num_effects, H.shape[1] - moving_interval + 1))
 	
 	for i in range(num_effects):
-		consolidated_H[i,:] = np.sum(H[i * COMPONENTS_PER_EFFECT:(i+1) * COMPONENTS_PER_EFFECT, :], axis=0)
+		row = np.sum(H[i * COMPONENTS_PER_EFFECT:(i+1) * COMPONENTS_PER_EFFECT, :], axis=0)
+		# try the moving average of moving_interval values instead of just the sum
+		consolidated_H[i,:] = np.convolve(row, np.ones((moving_interval,))/moving_interval, mode='valid')
+		consolidated_H[i,:] = consolidated_H[i,:] / max(consolidated_H[i,:])
 
 	# plot stuff
 	plt.figure(figsize=(18,20))
 	for j in range(num_effects):
-		plt.subplot(4, 3, j + 1)
+		plt.subplot(4,3, j + 1)
 		plt.plot(consolidated_H[j, :])
-		plt.title(LIST_OF_EFFECTS[j])
+		plt.title(list_of_effects[j])
 
 	plt.show()
 
 
 # test
 display_events('test_sounds/test_trained.wav')
+# display_events('test_sounds/test_trained_small.wav', list_of_effects=['Clear Throat', 'Cough', 'Door Slam'])
