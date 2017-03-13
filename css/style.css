@@ -1,0 +1,153 @@
+Skip to content
+This repository
+Search
+Pull requests
+Issues
+Gist
+ @AdamHe17
+ Sign out
+ Unwatch 2
+  Star 0
+ Fork 0 AdamHe17/2K-ML Private
+ Code  Issues 0  Pull requests 0  Projects 0  Wiki  Pulse  Graphs  Settings
+Branch: gh-pages Find file Copy path2K-ML/css/style.css
+165696b  on Jun 7, 2016
+@AdamHe17 AdamHe17 initial report
+1 contributor
+RawBlameHistory
+134 lines (133 sloc)  2.16 KB
+html, head, body, h2 {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    color: #4d4d4d;
+}
+section {
+    padding: 20px 20px;
+    clear: both;
+    overflow: hidden;
+}
+.section-wrapper {
+    max-width: 750px;
+    margin: 0 auto;
+}
+.center-paragraph {
+    margin: 1em auto;
+}
+.text-center {
+    text-align: center;
+}
+.img-title {
+    margin-bottom: 30px;
+    max-height: 300px;
+}
+.button {
+    padding: .6em 1.3em;
+    border-radius: .3em;
+    border: 0;
+    font-weight: bold;
+    color: #fff;
+    display: inline-block;
+    background: linear-gradient(to bottom, #61bd4f 0, #5aac44 100%);
+    box-shadow: 0 2px 0 #3f6f21;
+}
+.button:hover {
+    background: linear-gradient(to bottom, #5aac44 0, #519839 100%);
+    color: #fff;
+}
+footer {
+    color: #999;
+    font-size: 16px;
+    padding: 80px 20px;
+}
+footer a {
+    color: #999;
+}
+footer a:hover {
+    color: #000;
+}
+footer ul {
+    padding: 0;
+}
+footer li {
+    display: inline-block;
+    margin: 0 7px;
+}
+.background-dark-blue {
+    color: #fff;
+    background-color: #0079bf;
+}
+.layout-fill-img {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+.img-float-left {
+    float: left;
+    margin-right: 40px;
+}
+.background-light-blue {
+    background-color: #e4f0f6;
+    overflow: hidden;
+}
+.layout-grid-frame {
+    position: relative;
+    max-width: 890px;
+    margin: 0 auto;
+}
+.layout-callout-right {
+    position: absolute;
+    top: -60px;
+    left: 640px;
+}
+.layout-callout-right img {
+    max-width: initial;
+}
+.layout-twothirds-left {
+    max-width: 585px;
+    margin: 1em 0;
+}
+.app-store-link {
+    display: inline-block;
+    vertical-align: top;
+    margin: .4em 0;
+    padding: 0;
+}
+.app-store-link img {
+    height: 40px;
+    margin: 0;
+}
+.outline-link {
+    border: 1px solid;
+    border-radius: 4.2px;
+    padding: 9px 24.1px;
+    margin: 5.6px 0 0;
+    display: inline-block;
+    line-height: 20px;
+}
+a {
+    color: #5e98ba;
+    text-decoration: none;
+}
+a:hover {
+    color: #265773;
+    text-decoration: none;
+}
+p {
+    margin: 1em auto;
+    font-size: 1.4em;
+}
+section img {
+    margin: 20px auto;
+}
+h2 {
+    margin: 0 auto;
+}
+.button {
+    margin-bottom: 20px;
+}
+Contact GitHub API Training Shop Blog About
+© 2017 GitHub, Inc. Terms Privacy Security Status Help

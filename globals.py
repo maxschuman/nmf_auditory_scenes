@@ -6,12 +6,14 @@ WINDOW_LENGTH = 512
 
 
 import matplotlib.pyplot as plt
+
+
 def colormap(X):
-	"""
-	Displays np array X on a colormap
-	"""
-	fig = plt.figure(figsize=(8, 20))
-	plt.pcolor(X)
-	plt.colorbar()
-	# plt.axes().set_aspect('equal', 'datalim')
-	plt.show()
+    """
+    Displays np array X on a colormap
+    """
+    fig = plt.figure(figsize=(8, 20))
+    plt.pcolor(X)
+    plt.colorbar()
+    # plt.axes().set_aspect('equal', 'datalim')
+    plt.show()

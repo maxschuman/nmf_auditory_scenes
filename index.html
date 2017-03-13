@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Auditory Scene Labeling with NMF</title>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <!-- Our Styles -->
+  <link rel="stylesheet" href="css/style.css" type="text/css">
+  <link rel="stylesheet" href="css/table.css" type="text/css">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand">Auditory Scene Labeling</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active">
+            <a href="#abstract">Abstract</a></li>
+          <li>
+            <a href="#project">Project</a>
+          </li>
+          <li>
+            <a href="#team">Team</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="text-center">
+    <div class="container section-wrapper">
+      <h2 class="text-center">Auditory Scene Labeling with
+        <br> Non-negative Matrix Factorization</h2>
+      <div class="row">
+        <div class="col-sm-1">
+        </div>
+        <div class="col-sm-6" style="margin-top: 20px;">
+          <h3>
+            Max Schuman
+          </h3>
+        </div>
+        <div class="col-sm-4" style="margin-top: 20px;">
+          <h3>
+            Shuai He
+          </h3>
+        </div>
+      </div>
+      <p class="center-paragraph">
+        maxschuman2018@u.northwestern.edu
+        <br>
+        shuaihe2018@u.northwestern.edu
+      </p>
+      <p class="center-paragraph">
+        Northwestern University, EECS 352
+      </p>
+    </div>
+  </section>
+  <section class="background-dark-blue">
+    <div class="section-wrapper">
+      <h2 class="center-paragraph" id="abstract">
+        Abstract
+      </h2>
+      <p class="center-paragraph">
+        For our project, we tried to predict NBA players’ ratings on NBA 2k17, a popular basketball video game that will be released later this year. We felt this project was interesting because we were able to see how closely a player’s actual game stats correlated to their 2K rating. The NBA 2K franchise is one of the most popular sports video game, and a large reason for their popularity is their ability to correctly rate and balance the NBA players for the best gaming experience for their users.
+      </p>
+      <h5>
+        Sample Rating from NBA 2K16: Matthew Dellavedova, 87 Overall
+      </h5>
+      <p class="center-paragraph">
+        Specifically, for this project, we wanted to see how accurately we could predict a player’s NBA 2K rating based solely on their in-game NBA stats from the previous year. To do this, we first collected players’ season totals data, including stats such as total points scored, total rebounds, and total turnovers. We then used a nearest neighbor model to predict a specific player’s rating by averaging the closest other players’ ratings.
+      </p>
+      <p class="center-paragraph">
+        To build our model, we scraped the season data from <u>www.basketball-reference.com</u>. We took data from years 2001 through 2016. We then went through various websites and forums to match each player’s data with their specific NBA 2K rating for that year. Finally, we used the Weka machine learning software to test and train our nearest neighbor model. We measured our success by the mean absolute error our model produced. Specifically, we always chose the model with the smallest mean absolute error.
+      </p>
+      <p class="center-paragraph">
+        With the methods described above, we were able to predict an NBA player’s NBA 2K rating, on average, to within about 3.91 points of its actual value. For context, the NBA 2K franchise rates players on a 1-100 point scale. In addition, we learned that the ratings are primarily dependent on offensive stats, such as points scored and shots taken, and have very little to do with defensive stats.
+      </p>
+    </div>
+  </section>
+  <section>
+   <div class="section-wrapper">
+     <h2 class="center-paragraph" id="project">
+       Project Description
+     </h2>
+     <p class="center-paragraph">
+       First, we will more specifically describe the data set we used to test and train our model. As described above, we pulled players’ single season data from <u>www.basketball-reference.com</u>. We then paired the 3,823 instances we obtained with the corresponding NBA 2K rating. For each instance, we had 26 attributes. Those attributes are first name, last name, player’s age, the player’s team, and then various season totals, such as total points scored and total number of two point shots taken. A full list of attributes can be seen in the first table below.
+     </p>
+     <p class="center-paragraph">
+       With this initial data set, we went into the Weka machine learning software to quickly test several different models. The first thing we realized was that the training time for all of the models were cripplingly slow. We knew we had to cut down the number of attributes. Some of the attributes did not make sense, such as first and last name, and others were likely to be co-dependent and not too helpful. To choose the best attributes on which to train, we calculated each attribute’s correlation to the rating output. Correlation between two data sets shows how well one set can predict the other in a linear way. A correlation of 1 would be perfect prediction and a correlation of 0 means the data set cannot predict the rating at all. A table of all the attributes’ correlations is shown below, sorted from largest to smallest.
+     </p>
+     <p class="center-paragraph">
+       While this approach is not too sophisticated, it is a great starting point to pick generally descriptive statistics. In addition, it gives information to which attributes are the most important in determining a player’s NBA 2K rating. We will talk about this aspect later in the report. For selecting our attributes, we noticed a significant drop in correlation after the turnovers attribute. Therefore, we chose the eight attributes with the highest correlation to train on.
+     </p>
+     <p class="center-paragraph">
+       With our attributes trimmed, we were able to train many different models to see which models were most effective. In total, we were able to obtain 3,823 instances for our training set. We used the Weka software for all of our training and test, and we used its built-in 10-fold cross-validation training option. This means that we used all 3,823 instances for both training and testing at different times.
+     </p>
+     <p class="center-paragraph">
+        The first model we trained was the ZeroR model. This model guesses the average 2K rating for all of the players. The model had a mean absolute error of 7.92. We trained this very basic model because it gave us a great baseline. If we ever got a mean absolute error above 7.92, we would know we are doing worse than just guessing. After we found this baseline, we then tried to brainstorm models that would be great for our classification problem. After some thought, we came up with three prime model candidates. Specifically, we thought that a nearest-neighbor model, a decision tree model, and a linear regression model would work for our problem. To test the different models, we measured their learning curves and plotted them against each other.
+     </p>
+     <p class="center-paragraph">
+       The learning curves suggest that the linear regression model and the decision tree model are both slightly better than the nearest neighbor model. However, this graph does not tell the whole story. The differences in MAE between the three models are at most 0.4, which is not statistically significant. In addition, the similarity in models is further shown when we ran 10-fold cross-validation on the three models.
+     </p>
+     <p class="center-paragraph">
+       Overall, the analysis of our different possible models proved inconclusive. In order to improve our data and possibly differentiate between the models, we decided to add more advanced attributes to our dataset. As shown above in our table, all of our data to this point had been season totals. We thought we could improve our classification error by adding ratios of different stats as attributes. Specifically, we added in several common basketball statistics such as points per game, assist to turnover ratio, and various shooting percentages. A table of all added attributes and their correlation to rating is shown.
+     </p>
+     <p class="center-paragraph">
+       From the table, it is clear that there are only two greatly beneficial additional attributes, namely points per game and minutes per game. We added both of those attributes to our training data set. This creates our final set of attributes for training and learning. With our 10 attributes chosen, we decided to run 10-fold cross-validation on each of our possible models once more.
+     </p>
+     <p class="center-paragraph">
+       From this data, it is clear that the nearest neighbor model is a small bit better (~0.07) than either of the other two models. Even though this is a very small amount, we had to choose one model to predict our test data, so we chose the nearest neighbor model. In addition, we chose the nearest neighbor model because it is more flexible than either of the two other models. We can tweak the number of neighbors used and how the distance between neighbors is calculated if we find the model is over-fit to our training data.
+     </p>
+     <p class="center-paragraph">
+       Our best nearest neighbor model used 35 neighbors and 1/n distance weighting. This is the model that achieved 3.9135 10-fold cross validation accuracy. To test our final model, we held out 127 instances from NBA 2K7 and NBA 2K8 from the beginning. We never tested or trained on these instances, so this data is helpful is proving the validity of our model. With these test examples we were able to get a surprising 2.7996 mean absolute error. While this low error is certainly an anomaly because of the small sample size, the result proves that our model works on unseen data and is not over-fit to our training data. Our final step in the project was to use our model to predict the ratings for the next NBA 2K17 game. You can see the predictions below.
+     </p>
+     <p class="center-paragraph">
+       Next, we will talk about a couple of suggestions for future work. Because the time frame for this project was so short, we had to rush through it and did not get to do everything we would have wanted to do. Therefore, we wrote this section to describe things that we planned or wanted to do, but ran out of time. The first suggestion for future work would be to add in more advanced statistics as attributes. We only had access to the very basic stats for our attributes, but if we could get player efficiency ratings, or plus-minus stats, we think our predictions would become even better. In addition, a future suggestion would be to expand the model outside of just player statistics. Some players get more attention in the media than others, and that undoubtedly affects their NBA 2K ratings. Our other future suggestion is to add a sentiment analysis model to the predictor to gauge how the media portrays each player by looking through sports media articles.
+     </p>
+     <p class="center-paragraph">
+       The final part of this report will synthesize the data shown above and draw some conclusion about how the 2K team rates players. To do this, we will look at the most important attributes we chose for training. Looking at the correlation tables, it is clear that the amount of scoring a player does is most predictive of their rating in the next NBA 2K game. The best attributes for predicting rating are points, field goals made, field goals attempted, and free throws attempted. All of these attributes relate to a player’s offensive ability. It is clear that the 2K development team focuses on a player’s offensive ability when rating players. This fact makes sense because scoring is the most exciting and rewarding part of playing basketball, and the 2K development team’s main priority is to create a fun and interactive game. It is no surprise then that a player’s offensive ability is the main determining factor for their 2K rating. We have learned that if an NBA player ever wants to increase their 2K rating, they need to forget about defense, shoot more shots and score more.
+     </p>
+   </div>
+ </section>
+
+  <footer class="text-center background-dark-blue">
+  <p>
+    EECS 349 Spring 2016 - Christopher Kober, Shuai He
+  </p>
+</footer>
+<script src="js/datatable.js"></script>
+</body>
+
+</html>
