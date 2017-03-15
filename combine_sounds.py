@@ -55,7 +55,7 @@ def combine_sounds(list_of_paths, out_path):
 
 # create a smaller test file
 root = "dev_dataset/dcase2016_task2_train"
-effect_list = [name for name in os.listdir(root)]
+effect_list = [os.listdir(root)[1]] + [os.listdir(root)[5]] + [os.listdir(root)[9]]
 
 out_root = "test_sounds"
 list_of_paths = []
@@ -65,6 +65,6 @@ for i in range(len(effect_list)):
     
     list_of_paths.append(os.path.join(base, os.listdir(base)[5]))
 
-out_path = os.path.join(out_root, 'test_not_trained.wav')
+out_path = os.path.join(out_root, 'test_not_trained_small3.wav')
 
 combine_sounds(list_of_paths, out_path)
