@@ -1,0 +1,216 @@
+Case 0
+Error Rate is 4.63636
+True Positive Rate is 0.45455
+S: 15, I: 33, D: 3, correct: 5, N: 11
+Case 1
+Error Rate is 3.45455
+True Positive Rate is 0.31818
+S: 14, I: 51, D: 11, correct: 7, N: 22
+Case 2
+Error Rate is 2.15152
+True Positive Rate is 0.12121
+S: 10, I: 38, D: 23, correct: 4, N: 33
+Case 3
+Error Rate is 2.30303
+True Positive Rate is 0.21212
+S: 19, I: 40, D: 17, correct: 7, N: 33
+Case 4
+Error Rate is 1.97727
+True Positive Rate is 0.18182
+S: 24, I: 44, D: 19, correct: 8, N: 44
+Case 5
+Error Rate is 1.78182
+True Positive Rate is 0.18182
+S: 19, I: 45, D: 34, correct: 10, N: 55
+Case 6
+Error Rate is 3.72727
+True Positive Rate is 0.45455
+S: 15, I: 24, D: 2, correct: 5, N: 11
+Case 7
+Error Rate is 2.68182
+True Positive Rate is 0.31818
+S: 11, I: 37, D: 11, correct: 7, N: 22
+Case 8
+Error Rate is 1.93939
+True Positive Rate is 0.12121
+S: 8, I: 33, D: 23, correct: 4, N: 33
+Case 9
+Error Rate is 1.87879
+True Positive Rate is 0.18182
+S: 13, I: 32, D: 17, correct: 6, N: 33
+Case 10
+Error Rate is 1.70455
+True Positive Rate is 0.15909
+S: 20, I: 34, D: 21, correct: 7, N: 44
+Case 11
+Error Rate is 1.6
+True Positive Rate is 0.14545
+S: 16, I: 35, D: 37, correct: 8, N: 55
+Case 12
+Error Rate is 3.27273
+True Positive Rate is 0.45455
+S: 11, I: 23, D: 2, correct: 5, N: 11
+Case 13
+Error Rate is 2.59091
+True Positive Rate is 0.31818
+S: 9, I: 37, D: 11, correct: 7, N: 22
+Case 14
+Error Rate is 2.0
+True Positive Rate is 0.12121
+S: 9, I: 35, D: 22, correct: 4, N: 33
+Case 15
+Error Rate is 1.87879
+True Positive Rate is 0.15152
+S: 14, I: 30, D: 18, correct: 5, N: 33
+Case 16
+Error Rate is 1.63636
+True Positive Rate is 0.15909
+S: 17, I: 29, D: 26, correct: 7, N: 44
+Case 17
+Error Rate is 1.52727
+True Positive Rate is 0.10909
+S: 13, I: 31, D: 40, correct: 6, N: 55
+Case 18
+Error Rate is 3.90909
+True Positive Rate is 0.36364
+S: 9, I: 32, D: 2, correct: 4, N: 11
+Case 19
+Error Rate is 2.86364
+True Positive Rate is 0.31818
+S: 10, I: 46, D: 7, correct: 7, N: 22
+Case 20
+Error Rate is 2.15152
+True Positive Rate is 0.27273
+S: 10, I: 41, D: 20, correct: 9, N: 33
+Case 21
+Error Rate is 1.66667
+True Positive Rate is 0.09091
+S: 9, I: 23, D: 23, correct: 3, N: 33
+Case 22
+Error Rate is 2.06818
+True Positive Rate is 0.18182
+S: 13, I: 50, D: 28, correct: 8, N: 44
+Case 23
+Error Rate is 1.72727
+True Positive Rate is 0.09091
+S: 31, I: 36, D: 28, correct: 5, N: 55
+Case 24
+Error Rate is 2.45455
+True Positive Rate is 0.18182
+S: 4, I: 18, D: 5, correct: 2, N: 11
+Case 25
+Error Rate is 2.04545
+True Positive Rate is 0.31818
+S: 3, I: 29, D: 13, correct: 7, N: 22
+Case 26
+Error Rate is 1.9697
+True Positive Rate is 0.27273
+S: 8, I: 37, D: 20, correct: 9, N: 33
+Case 27
+Error Rate is 1.78788
+True Positive Rate is 0.09091
+S: 8, I: 27, D: 24, correct: 3, N: 33
+Case 28
+Error Rate is 1.68182
+True Positive Rate is 0.18182
+S: 11, I: 37, D: 26, correct: 8, N: 44
+Case 29
+Error Rate is 1.61818
+True Positive Rate is 0.14545
+S: 28, I: 33, D: 28, correct: 8, N: 55
+Case 30
+Error Rate is 2.27273
+True Positive Rate is 0.18182
+S: 4, I: 16, D: 5, correct: 2, N: 11
+Case 31
+Error Rate is 1.90909
+True Positive Rate is 0.36364
+S: 5, I: 27, D: 10, correct: 8, N: 22
+Case 32
+Error Rate is 1.90909
+True Positive Rate is 0.30303
+S: 7, I: 36, D: 20, correct: 10, N: 33
+Case 33
+Error Rate is 1.72727
+True Positive Rate is 0.18182
+S: 8, I: 26, D: 23, correct: 6, N: 33
+Case 34
+Error Rate is 1.65909
+True Positive Rate is 0.18182
+S: 12, I: 34, D: 27, correct: 8, N: 44
+Case 35
+Error Rate is 1.58182
+True Positive Rate is 0.12727
+S: 24, I: 30, D: 33, correct: 7, N: 55
+Case 36
+Error Rate is 3.0
+True Positive Rate is 0.27273
+S: 8, I: 22, D: 3, correct: 3, N: 11
+Case 37
+Error Rate is 2.09091
+True Positive Rate is 0.27273
+S: 6, I: 28, D: 12, correct: 6, N: 22
+Case 38
+Error Rate is 1.78788
+True Positive Rate is 0.33333
+S: 12, I: 30, D: 17, correct: 11, N: 33
+Case 39
+Error Rate is 1.84848
+True Positive Rate is 0.09091
+S: 15, I: 26, D: 20, correct: 3, N: 33
+Case 40
+Error Rate is 2.09091
+True Positive Rate is 0.13636
+S: 34, I: 41, D: 17, correct: 6, N: 44
+Case 41
+Error Rate is 1.63636
+True Positive Rate is 0.16364
+S: 17, I: 40, D: 33, correct: 9, N: 55
+Case 42
+Error Rate is 2.45455
+True Positive Rate is 0.27273
+S: 5, I: 17, D: 5, correct: 3, N: 11
+Case 43
+Error Rate is 2.09091
+True Positive Rate is 0.31818
+S: 6, I: 29, D: 11, correct: 7, N: 22
+Case 44
+Error Rate is 1.78788
+True Positive Rate is 0.30303
+S: 7, I: 32, D: 20, correct: 10, N: 33
+Case 45
+Error Rate is 1.84848
+True Positive Rate is 0.12121
+S: 15, I: 26, D: 20, correct: 4, N: 33
+Case 46
+Error Rate is 1.90909
+True Positive Rate is 0.15909
+S: 28, I: 36, D: 20, correct: 7, N: 44
+Case 47
+Error Rate is 1.56364
+True Positive Rate is 0.18182
+S: 11, I: 39, D: 36, correct: 10, N: 55
+Case 48
+Error Rate is 2.36364
+True Positive Rate is 0.36364
+S: 4, I: 17, D: 5, correct: 4, N: 11
+Case 49
+Error Rate is 2.13636
+True Positive Rate is 0.31818
+S: 5, I: 30, D: 12, correct: 7, N: 22
+Case 50
+Error Rate is 1.72727
+True Positive Rate is 0.30303
+S: 8, I: 30, D: 19, correct: 10, N: 33
+Case 51
+Error Rate is 1.75758
+True Positive Rate is 0.12121
+S: 13, I: 24, D: 21, correct: 4, N: 33
+Case 52
+Error Rate is 1.75
+True Positive Rate is 0.15909
+S: 23, I: 32, D: 22, correct: 7, N: 44
+Case 53
+Error Rate is 1.58182
+True Positive Rate is 0.2
+S: 12, I: 39, D: 36, correct: 11, N: 55

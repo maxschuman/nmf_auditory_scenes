@@ -1,5 +1,5 @@
 COMPONENTS_PER_EFFECT = 8
-LIST_OF_EFFECTS = ['Clear Throat', 'Cough', 'Door Slam', 'Drawer', 'Keyboard', 'Keys Drop', 'Knock', 'Laughter', 'Page Turn', 'Phone', 'Speech', 'Other']
+LIST_OF_EFFECTS = ['clearthroat', 'cough', 'doorslam', 'drawer', 'keyboard', 'keys', 'knock', 'laughter', 'pageturn', 'phone', 'speech', 'other']
 
 HOP_LENGTH = 256
 WINDOW_LENGTH = 512

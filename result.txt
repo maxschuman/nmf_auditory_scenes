@@ -1,0 +1,162 @@
+Case 1
+Correctly identified 8 out of 11 annotations
+False activation rate - 0.014509
+Case 2
+Correctly identified 16 out of 22 annotations
+False activation rate - 0.017317
+Case 3
+Correctly identified 18 out of 33 annotations
+False activation rate - 0.00815
+Case 4
+Correctly identified 24 out of 33 annotations
+False activation rate - 0.011789
+Case 5
+Correctly identified 24 out of 44 annotations
+False activation rate - 0.013379
+Case 6
+Correctly identified 36 out of 55 annotations
+False activation rate - 0.011999
+Case 7
+Correctly identified 9 out of 11 annotations
+False activation rate - 0.005011
+Case 8
+Correctly identified 15 out of 22 annotations
+False activation rate - 0.006464
+Case 9
+Correctly identified 18 out of 33 annotations
+False activation rate - 0.005754
+Case 10
+Correctly identified 22 out of 33 annotations
+False activation rate - 0.006068
+Case 11
+Correctly identified 24 out of 44 annotations
+False activation rate - 0.007295
+Case 12
+Correctly identified 34 out of 55 annotations
+False activation rate - 0.008013
+Case 13
+Correctly identified 8 out of 11 annotations
+False activation rate - 0.003914
+Case 14
+Correctly identified 15 out of 22 annotations
+False activation rate - 0.005019
+Case 15
+Correctly identified 20 out of 33 annotations
+False activation rate - 0.005536
+Case 16
+Correctly identified 23 out of 33 annotations
+False activation rate - 0.005189
+Case 17
+Correctly identified 25 out of 44 annotations
+False activation rate - 0.005834
+Case 18
+Correctly identified 33 out of 55 annotations
+False activation rate - 0.006431
+Case 19
+Correctly identified 8 out of 11 annotations
+False activation rate - 0.022514
+Case 20
+Correctly identified 16 out of 22 annotations
+False activation rate - 0.025306
+Case 21
+Correctly identified 25 out of 33 annotations
+False activation rate - 0.010272
+Case 22
+Correctly identified 17 out of 33 annotations
+False activation rate - 0.007763
+Case 23
+Correctly identified 24 out of 44 annotations
+False activation rate - 0.020214
+Case 24
+Correctly identified 38 out of 55 annotations
+False activation rate - 0.010571
+Case 25
+Correctly identified 7 out of 11 annotations
+False activation rate - 0.002534
+Case 26
+Correctly identified 16 out of 22 annotations
+False activation rate - 0.005479
+Case 27
+Correctly identified 25 out of 33 annotations
+False activation rate - 0.006044
+Case 28
+Correctly identified 16 out of 33 annotations
+False activation rate - 0.003696
+Case 29
+Correctly identified 24 out of 44 annotations
+False activation rate - 0.007755
+Case 30
+Correctly identified 37 out of 55 annotations
+False activation rate - 0.006504
+Case 31
+Correctly identified 6 out of 11 annotations
+False activation rate - 0.001929
+Case 32
+Correctly identified 15 out of 22 annotations
+False activation rate - 0.004059
+Case 33
+Correctly identified 23 out of 33 annotations
+False activation rate - 0.005455
+Case 34
+Correctly identified 14 out of 33 annotations
+False activation rate - 0.002937
+Case 35
+Correctly identified 27 out of 44 annotations
+False activation rate - 0.00698
+Case 36
+Correctly identified 38 out of 55 annotations
+False activation rate - 0.005463
+Case 37
+Correctly identified 8 out of 11 annotations
+False activation rate - 0.008352
+Case 38
+Correctly identified 12 out of 22 annotations
+False activation rate - 0.008094
+Case 39
+Correctly identified 20 out of 33 annotations
+False activation rate - 0.009974
+Case 40
+Correctly identified 20 out of 33 annotations
+False activation rate - 0.009151
+Case 41
+Correctly identified 23 out of 44 annotations
+False activation rate - 0.013936
+Case 42
+Correctly identified 31 out of 55 annotations
+False activation rate - 0.010434
+Case 43
+Correctly identified 7 out of 11 annotations
+False activation rate - 0.002937
+Case 44
+Correctly identified 12 out of 22 annotations
+False activation rate - 0.006383
+Case 45
+Correctly identified 19 out of 33 annotations
+False activation rate - 0.006496
+Case 46
+Correctly identified 20 out of 33 annotations
+False activation rate - 0.005487
+Case 47
+Correctly identified 24 out of 44 annotations
+False activation rate - 0.00924
+Case 48
+Correctly identified 28 out of 55 annotations
+False activation rate - 0.006593
+Case 49
+Correctly identified 7 out of 11 annotations
+False activation rate - 0.002098
+Case 50
+Correctly identified 13 out of 22 annotations
+False activation rate - 0.00577
+Case 51
+Correctly identified 19 out of 33 annotations
+False activation rate - 0.005915
+Case 52
+Correctly identified 21 out of 33 annotations
+False activation rate - 0.004487
+Case 53
+Correctly identified 24 out of 44 annotations
+False activation rate - 0.007456
+Case 54
+Correctly identified 29 out of 55 annotations
+False activation rate - 0.005915
