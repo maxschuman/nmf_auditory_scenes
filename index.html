@@ -13,7 +13,6 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   <!-- Our Styles -->
   <link rel="stylesheet" href="css/style.css" type="text/css">
-  <link rel="stylesheet" href="css/table.css" type="text/css">
 </head>
 
 <body>
@@ -33,7 +32,7 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li>
-            <a href="#abstract">Abstract</a>
+            <a href="#motivation">Motivation</a>
           </li>
           <li>
             <a href="#data">Data</a>
@@ -78,8 +77,8 @@
   </section>
   <section class="background-red">
     <div class="section-wrapper">
-      <h2 class="center-paragraph" id="abstract">
-        Abstract
+      <h2 class="center-paragraph" id="motivation">
+        Motivation
       </h2>
       <p class="center-paragraph">
         Event detection and labeling in auditory scenes is an intriguing and lively field of study. Accurate detection and comprehension of sounds such as a door closing, a person screaming, or a pipe bursting could offer important information to automated systems that actively listen to their surroundings.
@@ -97,6 +96,11 @@
       <p class="center-paragraph">
         To train and evaluate our model, we used the IEEE DCASE 2016 dataset for synthetic audio sound detection. The dataset contained short sound clips of 11 different events for training, as well as longer clips containing events and files with annotations of event onsets and offsets for evaluation.
       </p>
+      <audio controls src="training_sounds/clearthroat.wav" type="audio/wav">
+      </audio>
+      <h5>
+        Concatenated training sound for the event "Clear Throat"
+      </h5>
       <p class="center-paragraph">
         We evaluated our system using an error rate metric used to evaluate systems in the DCASE challenge, the ratio of events that are incorrectly labeled, detected but not truly present, and not detected to the number of present events in a clip. We also tracked accuracy rate, the proportion of events in the evaluation clips our system correctly identified.
       </p>
@@ -106,21 +110,21 @@
     <div class="section-wrapper">
       <h2 class="center-paragraph" id="project">
        Project Description
-     </h2>
+      </h2>
       <p class="center-paragraph">
         NMF aims to factorize a matrix <b>X</b> with dimensions <b>m</b> by <b>n</b> into a component matrix <b>W</b> with dimensions <b>m</b> by <b>r</b> and an activation matrix <b>H</b> with dimensions <b>r</b> by n, with <b>r</b> chosen beforehand, such that <b>WH ≈ X</b>. This can be done using gradient descent to minimize some cost function while updating the elements of <b>W</b> and <b>H</b> iteratively. Performing an NMF decomposition on a magnitude spectrogram should return unique repeating spectral components in
         <b>W</b> and a matrix of temporal activations of these components in <b>H</b>.
       </p>
       <img src="graphics/example_nmf.png" class="img-title" />
       <h5>
-        Figure 1. Example of NMF Decomposition on Spectrogram
+        Example of NMF Decomposition on Spectrogram
       </h5>
       <p class="center-paragraph">
         We used NMF to learn spectral components of examples of each sound class in the dataset, then appended these spectral components together to form an initial, fixed W to use in decomposing new sounds. We then condensed the resulting activations by summing the rows related to each learned event, taking a 10-frame moving average, and normalizing to yield a measure of each event’s activation level over time.
       </p>
       <img src="graphics/flowchart.png" class="img-title" />
       <h5>
-        Figure 2. Flowchart of NMF Scene Decomposition Process
+        Flowchart of NMF Scene Decomposition Process
       </h5>
     </div>
   </section>
@@ -136,19 +140,62 @@
         <img src="graphics/small_test_stft.png" class="img-title" />
         <img src="graphics/small_test_events_None.png" class="img-title" />
       </div>
+      <audio controls src="test_sounds/test_trained_small.wav" type="audio/wav" style="margin: 0 auto">
+      </audio>
       <h5>
-        Figure 3. Decomposition Results on Trained “Clear Throat” + “Cough” + “Door Slam” Example
+        Decomposition Results on Trained “Clear Throat” + “Cough” + “Door Slam”
       </h5>
       <div style="display: flex; flex-direction: row; justify-content: space-around">
         <img src="graphics/small_test_stft_not_trained.png" class="img-title" />
         <img src="graphics/small_test_events_not_trained_None.png" class="img-title" />
       </div>
+      <audio controls src="test_sounds/test_not_trained_small.wav" type="audio/wav">
+      </audio>
       <h5>
-        Figure 4. Decomposition Results on Untrained “Clear Throat” + “Cough” + “Door Slam” Example
+        Decomposition Results on Untrained “Clear Throat” + “Cough” + “Door Slam”
       </h5>
       <p class="center-paragraph">
         We measured events by binarizing these level functions using a threshold of 0.5. On the DCASE evaluation set, we achieved an average error rate of 2.14, worse than the provided baseline error rate but better than several systems submitted for the challenge. Additionally, we achieved an average accuracy of 19.5%.
       </p>
+      <h2 class="center-paragraph" id="examples">
+       More Examples
+      </h2>
+      <div style="display: flex; flex-direction: row; justify-content: space-around">
+        <img src="graphics/small_test2_stft.png" class="img-title" />
+        <img src="graphics/small_test2_events_trained_None.png" class="img-title" />
+      </div>
+      <audio controls src="test_sounds/test_trained_small2.wav" type="audio/wav" style="margin: 0 auto">
+      </audio>
+      <h5>
+        Decomposition Results on Trained “Keyboard” + “Page Turn” + “Speech”
+      </h5>
+      <div style="display: flex; flex-direction: row; justify-content: space-around">
+        <img src="graphics/small_test2_stft_not_trained.png" class="img-title" />
+        <img src="graphics/small_test2_events_not_trained_None.png" class="img-title" />
+      </div>
+      <audio controls src="test_sounds/test_not_trained_small2.wav" type="audio/wav">
+      </audio>
+      <h5>
+        Decomposition Results on Untrained “Keyboard” + “Page Turn” + “Speech”
+      </h5>
+      <div style="display: flex; flex-direction: row; justify-content: space-around">
+        <img src="graphics/small_test3_stft.png" class="img-title" />
+        <img src="graphics/small_test3_events_trained_None.png" class="img-title" />
+      </div>
+      <audio controls src="test_sounds/test_trained_small3.wav" type="audio/wav" style="margin: 0 auto">
+      </audio>
+      <h5>
+        Decomposition Results on Trained “Cough” + “Key Drop” + “Phone”
+      </h5>
+      <div style="display: flex; flex-direction: row; justify-content: space-around">
+        <img src="graphics/small_test3_stft_not_trained.png" class="img-title" />
+        <img src="graphics/small_test3_events_not_trained_None.png" class="img-title" />
+      </div>
+      <audio controls src="test_sounds/test_not_trained_small3.wav" type="audio/wav">
+      </audio>
+      <h5>
+        Decomposition Results on Untrained “Cough” + “Key Drop” + “Phone”
+      </h5>
     </div>
   </section>
 
@@ -157,7 +204,6 @@
       EECS 352 Winter 2017 - Max Schuman, Shuai He
     </p>
   </footer>
-  <script src="js/datatable.js"></script>
 </body>
 
 </html>
