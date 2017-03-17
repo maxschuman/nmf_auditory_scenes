@@ -35,6 +35,7 @@ def get_filepaths():
     return annotations, sounds
 
 annotations, sounds = get_filepaths()
+errors = []
 print('{} cases'.format(len(annotations)))
 with open('new_result.txt', 'w') as outfile:
     total_correct = 0
@@ -102,8 +103,10 @@ with open('new_result.txt', 'w') as outfile:
         # res = 'Case {0}'.format(i + 1) + '\n' + 'Correctly identified {0} out of {1} annotations'.format(correct, len(test_annotation)) + '\n' + 'False activation rate - {0}'.format(round(np.sum(consolidated_H) / consolidated_H.size, 6))
         res = 'Case {}'.format(anno) + '\n' + 'Error Rate is {}'.format(round((S + I + D) / len(test_annotation), 5)) + '\n' + 'True Positive Rate is {}'.format(
             round(correct / len(test_annotation), 5)) + '\n' + 'S: {0}, I: {1}, D: {2}, correct: {3}, N: {4}'.format(S, I, D, correct, len(test_annotation))
+        errors.append((S + I + D) / len(test_annotation))
         print(res)
         outfile.write(res + '\n')
         total_correct += correct
         total_events += len(test_annotation)
     print(total_correct, total_events, total_correct / total_events)
+    print(sum(errors) / len(errors))
