@@ -27,15 +27,22 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand">Auditory Scene Labeling</a>
+        <a class="navbar-brand">Auditory Scene Labeling with NMF</a>
       </div>
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li class="active">
-            <a href="#abstract">Abstract</a></li>
           <li>
-            <a href="#project">Project</a>
+            <a href="#abstract">Abstract</a>
+          </li>
+          <li>
+            <a href="#data">Data</a>
+          </li>
+          <li>
+            <a href="#project">Project Description</a>
+          </li>
+          <li>
+            <a href="#results">Results</a>
           </li>
         </ul>
       </div>
@@ -62,42 +69,95 @@
       </div>
       <p class="center-paragraph">
         maxschuman2018@u.northwestern.edu
-        <br>
-        shuaihe2018@u.northwestern.edu
+        <br> shuaihe2018@u.northwestern.edu
       </p>
       <p class="center-paragraph">
         Northwestern University, EECS 352, Prof. Bryan Pardo
       </p>
     </div>
   </section>
-  <section class="background-dark-blue">
+  <section class="background-red">
     <div class="section-wrapper">
       <h2 class="center-paragraph" id="abstract">
         Abstract
       </h2>
       <p class="center-paragraph">
-        For our project, we attempted to automatically label different sounds from the environment with the help of non-negative matrix factorization.
+        Event detection and labeling in auditory scenes is an intriguing and lively field of study. Accurate detection and comprehension of sounds such as a door closing, a person screaming, or a pipe bursting could offer important information to automated systems that actively listen to their surroundings.
+      </p>
+      <p class="center-paragraph">
+        Non-negative matrix factorization is a relatively simple process for compressing the information in a sparse, patterned matrix by finding a factorization using gradient descent techniques. In the past, NMF has proven useful in audio processing applications such as transcribing piano music, allowing a system to decompose inputted sound into components (spectrums of notes) and activations (representations of note occurrence over time). Though not the cutting edge of auditory scene labeling today, NMF can be used similarly to decompose an audio scene into its component sounds and activations.
       </p>
     </div>
   </section>
   <section>
-   <div class="section-wrapper">
-     <h2 class="center-paragraph" id="project">
+    <div class="section-wrapper">
+      <h2 class="center-paragraph" id="data">
+       Data and Evaluation
+     </h2>
+      <p class="center-paragraph">
+        To train and evaluate our model, we used the IEEE DCASE 2016 dataset for synthetic audio sound detection. The dataset contained short sound clips of 11 different events for training, as well as longer clips containing events and files with annotations of event onsets and offsets for evaluation.
+      </p>
+      <p class="center-paragraph">
+        We evaluated our system using an error rate metric used to evaluate systems in the DCASE challenge, the ratio of events that are incorrectly labeled, detected but not truly present, and not detected to the number of present events in a clip. We also tracked accuracy rate, the proportion of events in the evaluation clips our system correctly identified.
+      </p>
+    </div>
+  </section>
+  <section class="background-red">
+    <div class="section-wrapper">
+      <h2 class="center-paragraph" id="project">
        Project Description
      </h2>
-     <p class="center-paragraph">
-       First, we will more specifically describe the data set we used to test and train our model. As described above, we pulled players’ single season data from <u>www.basketball-reference.com</u>. We then paired the 3,823 instances we obtained with the corresponding NBA 2K rating. For each instance, we had 26 attributes. Those attributes are first name, last name, player’s age, the player’s team, and then various season totals, such as total points scored and total number of two point shots taken. A full list of attributes can be seen in the first table below.
-     </p>
-     <img src="img/2k17-1.jpg" class="img-title">
-   </div>
- </section>
+      <p class="center-paragraph">
+        NMF aims to factorize a matrix <b>X</b> with dimensions <b>m</b> by <b>n</b> into a component matrix <b>W</b> with dimensions <b>m</b> by <b>r</b> and an activation matrix <b>H</b> with dimensions <b>r</b> by n, with <b>r</b> chosen beforehand, such that <b>WH ≈ X</b>. This can be done using gradient descent to minimize some cost function while updating the elements of <b>W</b> and <b>H</b> iteratively. Performing an NMF decomposition on a magnitude spectrogram should return unique repeating spectral components in
+        <b>W</b> and a matrix of temporal activations of these components in <b>H</b>.
+      </p>
+      <img src="graphics/example_nmf.png" class="img-title" />
+      <h5>
+        Figure 1. Example of NMF Decomposition on Spectrogram
+      </h5>
+      <p class="center-paragraph">
+        We used NMF to learn spectral components of examples of each sound class in the dataset, then appended these spectral components together to form an initial, fixed W to use in decomposing new sounds. We then condensed the resulting activations by summing the rows related to each learned event, taking a 10-frame moving average, and normalizing to yield a measure of each event’s activation level over time.
+      </p>
+      <img src="graphics/flowchart.png" class="img-title" />
+      <h5>
+        Figure 2. Flowchart of NMF Scene Decomposition Process
+      </h5>
+    </div>
+  </section>
+  <section>
+    <div class="section-wrapper">
+      <h2 class="center-paragraph" id="results">
+       Results
+     </h2>
+      <p class="center-paragraph">
+        For inspection and display purposes, we trained smaller models on subsets of the 11 event classes in the DCASE data set, such as a “Clear Throat,” “Cough,” and “Door Slam” subset, and then decomposed synthesized sound samples containing one example of each event class in order.
+      </p>
+      <div style="display: flex; flex-direction: row; justify-content: space-around">
+        <img src="graphics/small_test_stft.png" class="img-title" />
+        <img src="graphics/small_test_events_None.png" class="img-title" />
+      </div>
+      <h5>
+        Figure 3. Decomposition Results on Trained “Clear Throat” + “Cough” + “Door Slam” Example
+      </h5>
+      <div style="display: flex; flex-direction: row; justify-content: space-around">
+        <img src="graphics/small_test_stft_not_trained.png" class="img-title" />
+        <img src="graphics/small_test_events_not_trained_None.png" class="img-title" />
+      </div>
+      <h5>
+        Figure 4. Decomposition Results on Untrained “Clear Throat” + “Cough” + “Door Slam” Example
+      </h5>
+      <p class="center-paragraph">
+        We measured events by binarizing these level functions using a threshold of 0.5. On the DCASE evaluation set, we achieved an average error rate of 2.14, worse than the provided baseline error rate but better than several systems submitted for the challenge. Additionally, we achieved an average accuracy of 19.5%.
+      </p>
+    </div>
+  </section>
 
-  <footer class="text-center background-dark-blue">
-  <p>
-    EECS 352 Winter 2017 - Max Schuman, Shuai He
-  </p>
-</footer>
-<script src="js/datatable.js"></script>
+  <footer class="text-center background-red">
+    <p>
+      EECS 352 Winter 2017 - Max Schuman, Shuai He
+    </p>
+  </footer>
+  <script src="js/datatable.js"></script>
 </body>
 
 </html>
